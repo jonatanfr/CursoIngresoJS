@@ -2,5 +2,7 @@
 function mostrar()
 {
 	alert("ok");
+	alert("Esto funciona de maravilla");
+	
 }
 
