@@ -10,5 +10,119 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
- 	
+    var cantidadLamaparas;
+    var precioLampara;
+    var marca;
+    var descuento;
+    var precioConDescuento;
+    var importeFinal;
+    var ingresosBrutos;
+
+    descuento = 0;
+    precioLampara = 35;
+
+    cantidadLamaparas = document.getElementById("Cantidad").value;
+
+    marca = document.getElementById("precioDescuento").value;
+
+    if (cantidadLamaparas >= 6) {
+        descuento = 0.5;
+    } else {
+        if (cantidadLamaparas == 5) {
+            if (marca == "ArgentinaLuz") {
+                
+                descuento = 0.4;
+            } else {
+                descuento = 0.3;
+            }
+        } else {
+            if (cantidadLamaparas == 4) {
+                if (marca == "ArgentinaLuz" || marca == "FelipeLamparas") {
+
+                    descuento = 0.25;
+                } else {
+                    descuento = 0.2;
+                }
+            } else {
+                if (cantidadLamaparas == 3) {
+                    if (marca == "ArgentinaLuz") {
+                        descuento = 0.15;
+                    } else {
+                        if (marca == "FelipeLamparas") {
+                            descuento = 0.10;
+                        } else {
+                            descuento = 0.05;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    if (cantidadLamaparas >= 6) {
+        descuento = 0.5;
+    } else {
+        if (cantidadLamaparas == 5) {
+            if (marca == "ArgentinaLuz") {
+                descuento = 0.4;
+            } else {
+                descuento = 0.3;
+            }
+        } else {
+            if (cantidadLamaparas == 4) {
+                if (marca == "ArgentinaLuz" || marca == "FelipeLamparas") {
+                    descuento = 0.25;
+                } else {
+                    descuento = 0.2;
+                }
+            } else {
+                if (cantidadLamaparas == 3) {
+                    if (marca == "ArgentinaLuz") {
+                        descuento = 0.15;
+                    } else {
+                        if (marca == "FelipeLamparas") {
+                            descuento = 0.1;
+                        } else {
+                            descuento = 0.05;
+                        }
+                    }
+                }
+            }
+        }
+
+        if (cantidadLamaparas == 5 && marca == "ArgentinaLuz") {
+            descuento = 0.4;
+        } else {
+            if (cantidadLamaparas == 5) {
+                descuento = 0.3;
+            } else {
+
+            }
+        }
+    }
+
+    total = precioLampara * cantidadLamaparas;
+
+    precioConDescuento = total * descuento;
+
+    importeFinal = total - precioConDescuento;
+
+    if (importeFinal > 120) {
+        ingresosBrutos = importeFinal * 0.10;
+        importeFinal = importeFinal + ingresosBrutos;
+    }
+
+     
+    if (marca == "ArgentinaLuz") {
+        if(cantidadLamaparas >= 6) {
+            descuento = 0.5;
+        } else {
+
+        }
+    } else {
+
 }
+
+
+
+

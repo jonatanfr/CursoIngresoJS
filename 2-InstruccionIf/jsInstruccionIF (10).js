@@ -9,11 +9,27 @@ function mostrar()
 	maximo = 10;
 	minimo = 1;
 
-	nota= Math.floor(Math.random() * ((maximo + 1) - minimo) + minimo);
+	nota= Math.random(10 * Math.random());
+
+	console.log(nota);
 
 	if (nota>= 9){
 		alert("Excelente. Nota:" + nota);
 		
 	}
+	 else if{( nota >= 4 && nota<9){
+		alert("aprobo");
+
+	}
+	else{
+		alert("vamos, la proxima se puede");
+
+	}
+
+
+}
+	
+
+
 
 }//FIN DE LA FUNCIÓN
