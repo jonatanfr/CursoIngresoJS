@@ -4,13 +4,27 @@ function mostrar()
 	var contador=0;
 	var acumulador=0;
 	var respuesta='si';
+	var numero;
 
-	while(seguir == "si"){
+	while (respuesta== "si") {
+		
+				contador++;
+				numero = prompt("Ingrese un numero: ");
+		
+				// Validacion
+				numero = parseInt (numero);
+		
+				while(isNaN(numero)){
+					numero = prompt ("Ingrese un numero valido");
+					numero = parseInt(numero);
+				}
+		
+				//Acumulamos
+		
+				acumulador = acumulador + numero;
 
-			alert("Hola");
-			
-			seguir = prompt("Quiere que lo salude de nuevo?");
-			
+				respuesta = prompt ("Desea ingresar otro numero? SI/No", "si");
+
 	}
 
 

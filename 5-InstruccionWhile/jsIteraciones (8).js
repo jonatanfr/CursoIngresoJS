@@ -22,8 +22,11 @@ function mostrar()
 				positivo = positivo + respuesta;
 			}
 		}
-		respuesta = prompt ("Ingrese numero o ingrese NO para terminar");
-		
+
+		acumulador = acumulador + numero;
+
+		respuesta = prompt ("Desea ingresar otro numero? Si/NO", "SI");
+
 	}
 
 	

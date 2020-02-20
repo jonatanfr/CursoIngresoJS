@@ -7,9 +7,21 @@ function mostrar()
 
 	while (contador<5) {
 
-		numero = parseInt(prompt("Ingrese un numero: "));
-		acumulador = acumulador + numero;
 		contador++;
+		numero = prompt("Ingrese un numero: ");
+
+		// Validacion
+		numero = parseInt (numero);
+
+		while(isNaN(numero)){
+			numero = prompt ("Ingrese un numero valido");
+			numero = parseInt(numero);
+		}
+
+		//Acumulamos
+
+		acumulador = acumulador + numero;
+		
 	}
 
 
