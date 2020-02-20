@@ -4,28 +4,44 @@ function mostrar()
 	var contador=0;
 	var positivo=0;
 	var negativo=1;
+	var numero;
+	var respuesta= true;
+
 	
-	var respuesta='si';
+	while (respuesta) 
+	{
+		numero = prompt ("Ingrese numeros o Ingrese NO para terminar");
 
-	respuesta = prompt ("Ingrese numeros o Ingrese NO para terminar");
-	while(respuesta.toLocaleUpperCase() !="NO") {
+		while (isNaN(numero))
+		{
+			
+			numero = prompt ("Ingrese un numero valido");
+			numero = parseInt(numero);
 
-		if (!isNaN(respuesta)) {
+		}  
 
-			respuesta = parseInt(respuesta);
-			if (respuesta <= 0) {
+			// Operaciones
 
-			negativo = negativo * respuesta;
+			if (numero >= 0) 
+			{
 
-			} else {
+				positivo += numero;
+			
+			// positivo = positivo + numero;
 
-				positivo = positivo + respuesta;
+			} 
+			else 
+			{
+				negativo *= numero;
+				contador ++;
 			}
-		}
+			respuesta = confirm ( "¿Desea continuar?");
 
-		acumulador = acumulador + numero;
 
-		respuesta = prompt ("Desea ingresar otro numero? Si/NO", "SI");
+			if (contador == 0)
+			{
+				negativo = 0
+			}
 
 	}
 
