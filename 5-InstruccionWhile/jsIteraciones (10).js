@@ -2,40 +2,77 @@ function mostrar()
 {
 	//variables
 
-	var numero;
 	var contador=0;
-	var SumaPositivos=0;
-	var SumaNegativos=0;
-	var PromedioPositivo=0;
-	var PromedioNegativo=0;
-	var DiferenciaPyN=0;
-	var respuesta=true;
-	
-	while(respuesta)
+	//declarar contadores y variables 
+	var Sumapositivos=0;
+	var Sumanegativos=0;
+	var cantidadNegativos=0;
+	var cantidadPosiivos= 0;
+	var cantidadCeros=0;
+	var par= 0;
+	var cantidadPares= 0;
+	var promedioPositivos=0;
+	var promedioNegativos=0;
+	var negativosMenosPositivos= 0;
+	var respuesta="si";
+	respuesta = prompt("Ingrese un número o pulse NO para terminar");
+	respuesta = respuesta.toLowerCase();
+
+	while(respuesta!="no")
 	{
-		numero=prompt("Ingrese un numero");
-
-		while (isNaN(numero));
+		if( !isNaN(respuesta) )
 		{
-			numero = prompt ("Error! Numero invalido");
-
-		}
-			numero = parseInt(numero);
-
-			//Calculos
-		
-			if (numero > 0) 
+			respuesta = parseInt(respuesta);
+			if( respuesta > 0)
 			{
-				// Positivos
-				//punto2
-				SumaPositivos += numero;
+				Sumapositivos += respuesta;
+				cantidadPosiivos++;
+				promedioPositivos = Sumapositivos / cantidadPosiivos;
+			}
+			else
+			{
+				if ( respuesta == 0 )
+				{
+					cantidadCeros++;
+				}
+				else
+				{
+					Sumanegativos += respuesta;
+					cantidadNegativos++;
+					promedioNegativos = Sumanegativos / cantidadNegativos;
 
+				}
+				
 			}
 
-		respuesta=confirm("¿Desea continuar?");
+			par = respuesta % 2;// si esto da 0 o sea , no hay resto, es par
+			if ( respuesta != 0 && 0 == par )
+			{
+				cantidadPares++;
+			}
+
+
+			negativosMenosPositivos = Sumapositivos + Sumanegativos;
+
+		}
+		respuesta = prompt("Ingrese un número o pulse NO para terminar");
+		respuesta = respuesta.toLowerCase();	
+	
 	}
 
 
+	document.write( "La suma de los positivos " + Sumapositivos.toString() + "<br>" );
+	document.write( "La suma de los negativos " +  Sumanegativos.toString() + "<br>");
+	document.write( "La cantidad de negativos " + cantidadNegativos.toString() + "<br>");
+	document.write( "La cantidad de positivos " +cantidadPosiivos.toString() + "<br>");
+	document.write( "La cantidad de ceros " +cantidadCeros.toString() + "<br>");
+	document.write( "La cantidad de pares " + cantidadPares.toString() + "<br>");
+	document.write( "El promedio de los positivos  " + promedioPositivos.toString()+ "<br>" );
+	document.write( "El promedio de los negativos " +  promedioNegativos.toString() + "<br>");
+	document.write( "Diferencia entre negativos y positivos " + negativosMenosPositivos.toString() + "<br>");
 
 
-}//FIN DE LA FUNCIÓN
+
+}
+
+	//FIN DE LA FUNCION
